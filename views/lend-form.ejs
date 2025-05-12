@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lend Money</title>
+  <style>
+    /* Light background */
+    body {
+      background-color: #f9f9f9;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: #333;
+      overflow-y: auto;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    h2, h3, h4 {
+      color: #0645ad;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+    }
+
+    h3 {
+      font-size: 1.8rem;
+      font-weight: 600;
+    }
+
+    h4 {
+      font-size: 1.5rem;
+      font-weight: 500;
+    }
+
+    form {
+      background-color: #e8f0fe;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    input, select, button {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: #0645ad;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #0366d6;
+    }
+
+    a {
+      text-decoration: none;
+      color: #0645ad;
+      font-weight: 500;
+      margin-top: 20px;
+      display: inline-block;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: #0366d6;
+    }
+  </style>
+</head>
+<body>
+  <h2>Lend Money</h2>
+
+  <!-- Search Existing Transaction -->
+  <form method="POST" action="/lend-search">
+    <h3>Update Existing Transaction</h3>
+    <input type="text" name="customerName" placeholder="Customer Name" required />
+    <input type="text" name="jewelName" placeholder="Jewel Name" required />
+    <label for="date">Transaction Date:</label>
+    <input type="date" name="date" required />
+    <button type="submit">Search</button>
+  </form>
+
+  <% if (transaction) { %>
+    <h4>Transaction for <%= transaction.customerName %> Found:</h4>
+    <p>Initial Amount : <%= transaction.amountGiven || 'N/A' %> on <%= transaction.date?.toDateString() || 'N/A' %></p>
+    <p>Amount 1: <%= transaction.amount1 || 'N/A' %> on <%= transaction.date1?.toDateString() || 'N/A' %></p>
+    <p>Amount 2: <%= transaction.amount2 || 'N/A' %> on <%= transaction.date2?.toDateString() || 'N/A' %></p>
+    <p>Amount 3: <%= transaction.amount3 || 'N/A' %> on <%= transaction.date3?.toDateString() || 'N/A' %></p>
+
+    <% if (!transaction.amount1||!transaction.amount2 || !transaction.amount3) { %>
+      <form method="POST" action="/lend-update/<%= transaction._id %>">
+        <input type="number" name="amount" placeholder="New Amount to Add" required />
+        <label for="date">Date of Update:</label>
+        <input type="date" name="date" required />
+        <button type="submit">Add to Existing Transaction</button>
+      </form>
+    <% } else { %>
+      <p><strong>All 3 lend entries are filled. Cannot update further.</strong></p>
+    <% } %>
+  <% } %>
+
+  <hr>
+
+  <!-- Create New Transaction -->
+  <h3>New Transaction</h3>
+  <form method="POST" action="/lend">
+    <input type="text" name="customerName" placeholder="Customer Name" required /><br/>
+    <input type="text" name="father" placeholder="Father's Name" required /><br/>
+    <input type="text" name="sirname" placeholder="Sirname" required /><br/>
+    <input type="text" name="village" placeholder="Village" required /><br/>
+    <input type="number" name="contact" placeholder="Contact Number" required /><br/>
+    <input type="text" name="jewelName" placeholder="Jewel Name" required /><br/>
+
+    <select name="jewelType">
+      <option value="gold">Gold</option>
+      <option value="silver">Silver</option>
+    </select><br/>
+
+    <input type="number" name="amountGiven" placeholder="Amount" required /><br/>
+    <input type="number" name="weight" placeholder="Weight (gm)" required /><br/>
+    <input type="number" name="tanch" placeholder="Tanch (%)" required /><br/>
+    <label for="date">Transaction Date:</label>
+    <input type="date" name="date" required /><br/>
+
+    <button type="submit">Lend</button>
+  </form>
+
+  <br/>
+  <a href="/dashboard">Back to Dashboard</a>
+</body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Archived Logs</title>
+  <style>
+    /* Light background */
+    body {
+      background-color: #f9f9f9;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: #333;
+      overflow-y: auto;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    h2 {
+      color: #0645ad;
+      margin-bottom: 20px;
+      font-size: 2.5rem;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .no-print {
+      margin-bottom: 20px;
+    }
+
+    button {
+      background-color: #0645ad;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-right: 10px;
+    }
+
+    button:hover {
+      background-color: #0366d6;
+    }
+
+    a {
+      text-decoration: none;
+      color: #0645ad;
+      font-weight: 500;
+      margin-top: 20px;
+      display: inline-block;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: #0366d6;
+    }
+
+    form {
+      background-color: #e8f0fe;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    input, select {
+      width: calc(100% - 22px);
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    button[type="submit"] {
+      width: 100%;
+      margin-top: 10px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      background-color: #fff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #e8f0fe;
+      color: #0645ad;
+    }
+    td button {
+      background-color: #0645ad;
+      color: white;
+      padding: none;
+      border: none;
+      width: 10px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    td form {
+      display: inline; /* Prevent form from stretching */
+      margin: 0;
+      padding: 0;
+    }
+
+  .send-to-ca-btn {
+    background-color: #0047AB;
+    color: white;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    box-shadow: none;
+    }
+
+    .send-to-ca-btn:hover {
+      background-color: #003d99;
+    }  
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    /* Hide the buttons when printing */
+    @media print {
+      .no-print { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <h2>Archived Transactions</h2>
+
+  <div class="no-print">
+    <!-- Print Button -->
+    <button onclick="window.print()">🖨️ Print</button>
+
+    <!-- Export Links -->
+    <a href="/export/logs/excel"><button>📊 Export to Excel</button></a>
+    <a href="/export/logs/pdf" target="_blank"><button>📄 Export to PDF</button></a>
+  </div>
+  <!-- Filter Form -->
+  <form action="/logs" method="GET">
+    <label for="customerName">Customer Name:</label>
+    <input type="text" id="customerName" name="customerName" placeholder="Customer Name" /><br/>
+
+    <label for="sirname">Surname:</label>
+    <input type="text" id="sirname" name="sirname" placeholder="Surname" /><br/>
+
+    <label for="month">Month:</label>
+    <select name="month" id="month">
+      <option value="">Select Month</option>
+      <option value="1">January</option>
+      <option value="2">February</option>
+      <option value="3">March</option>
+      <option value="4">April</option>
+      <option value="5">May</option>
+      <option value="6">June</option>
+      <option value="7">July</option>
+      <option value="8">August</option>
+      <option value="9">September</option>
+      <option value="10">October</option>
+      <option value="11">November</option>
+      <option value="12">December</option>
+    </select><br/>
+
+    <label for="year">Year:</label>
+    <input type="number" name="year" id="year" placeholder="Year" /><br/>
+
+    <button type="submit">Filter</button>
+  </form>
+
+  <!-- Display Logs Table -->
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Customer</th>
+        <th>Father Name</th>
+        <th>Surname</th>
+        <th>Village</th>
+        <th>Jewel</th>
+        <th>Jewel Type</th>
+        <th>Amount</th>
+        <th>weight(gm)</th>
+        <th>tanch(%)</th>
+        <th>Original Date</th>
+        <th>Interest Rate (%)</th>
+        <th>Interest Amount</th>
+        <th>Archived At</th>
+        <th>
+          Send to ITR
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% logs.forEach(log => { %>
+        <tr>
+          <td><%= log.customerName %></td>
+          <td><%= log.FatherName %></td>
+          <td><%= log.Sirname %></td>
+          <td><%= log.Village %></td>
+          <td><%= log.jewelName %></td>
+          <td><%= log.jewelType %></td>
+          <td>₹<%= log.amountGiven %></td>
+          <td><%= log.weight %></td>
+          <td><%= log.tanch %></td>
+          <td><%= new Date(log.originalDate).toDateString() %></td>
+          <td><%= log.interestRateUsed %></td>
+          <td>₹<%= log.interestAmount %></td>
+          <td><%= new Date(log.archivedAt).toLocaleString() %></td>
+          <td>
+  <% if (log.sentToCA) { %>
+    ✅ Sent
+  <% } else { %>
+    <form action="/send-to-ca" method="POST">
+      <input type="hidden" name="logId" value="<%= log._id %>">
+      <button type="submit">Send to CA</button>
+    </form>
+  <% } %>
+</td>
+
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+
+  <br/>
+  <a href="/dashboard">Back to Dashboard</a>
+</body>
+</html>

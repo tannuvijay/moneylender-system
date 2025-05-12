@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Interest Calculation Result</title>
+  <style>
+    /* Light background */
+    body {
+      background-color: #f9f9f9;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: #333;
+      overflow-y: auto;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    h2 {
+      color: #0645ad;
+      margin-bottom: 20px;
+      font-size: 2.5rem;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin: 5px 0;
+    }
+
+    form {
+      background-color: #e8f0fe;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      margin: 20px 0;
+    }
+
+    input[type="number"], input[type="date"] {
+      width: calc(100% - 22px);
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: #0645ad;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      width: 100%;
+    }
+
+    button:hover {
+      background-color: #0366d6;
+    }
+
+    a {
+      text-decoration: none;
+      color: #0645ad;
+      font-weight: 500;
+      margin-top: 20px;
+      display: inline-block;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: #0366d6;
+    }
+  </style>
+</head>
+<body>
+  <h2>Interest Calculation Result</h2>
+  
+  <p>Customer: <%= customerName %></p>
+  <p>Amount Given: ₹<%= amountGiven %></p>
+  <p>Interest Rate: <%= interestRate %>% per month</p>
+
+  <p>Time: <%= timeDisplay %></p>
+  <p>Amount 1: ₹<%= amount1 %></p>
+  <p>Time of amount 1: <%= timeDisplay1 %></p>
+  <p>Amount 2: ₹<%= amount2 %></p>
+  <p>Time of amount 2: <%= timeDisplay2 %></p>
+  <p>Amount 3: ₹<%= amount3 %></p>
+  <p>Time of amount 3: <%= timeDisplay3 %></p>
+
+  <p><strong>Total Interest of all amounts:</strong> ₹<%= interest %></p>
+  <p><strong>Total principal amount:</strong> ₹<%= principle %></p>
+  <p><strong>Total principal + interest:</strong> ₹<%= grandTotal %></p>
+
+  <br/>
+  <h3>Delete and Archive</h3>
+  <form method="POST" action="/delete-entry/<%= transactionId %>">
+    <label>New Interest Rate for Log (can be different):</label>
+    <input type="number" name="logInterestRate" required placeholder="New Interest Rate (%)" />
+    <button type="submit">Delete and Archive</button>
+  </form>
+
+  <br/>
+  <h3>Update Transaction</h3>
+  <form method="POST" action="/update-transaction/<%= transactionId %>">
+    <p><strong>Total Interest:</strong> ₹<%= interest %></p>
+    <label>Amount Paid (₹):</label>
+    <input type="number" name="amountPaid" required placeholder="Enter amount paid" />
+    <input type="date" name="date" required placeholder="Enter date" />
+    <!-- Hidden fields -->
+    <input type="hidden" name="totalInterest" value="<%= interest %>" />
+    <input type="hidden" name="totalAmounts" value="<%= amountGiven+amount1 + amount2 + amount3%>" />
+
+    <button type="submit">Update Transaction</button>
+  </form>
+
+  <br/>
+  <a href="/calculate-interest">Calculate Another</a> |
+  <a href="/dashboard">Back to Dashboard</a>
+</body>
+</html>
