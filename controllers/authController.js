@@ -1,5 +1,5 @@
 const Owner = require('../models/Owner');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 
 exports.signup = async (req, res) => {
   const { name, number, password } = req.body;
