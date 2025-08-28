@@ -17,36 +17,47 @@ This platform helps moneylenders efficiently manage loans secured by gold and si
 
 ## 📸 Screenshots  
 
-<div align="center">
 
 ### 🔹 Login & Owner Selection  
-<img width="756" height="600" alt="image" src="https://github.com/user-attachments/assets/a23632d0-d04f-4337-9c1f-00d737ed9435" />
 
+<div align="center">
 
+<img width="500" height="500" alt="Login Screen" src="https://github.com/user-attachments/assets/a23632d0-d04f-4337-9c1f-00d737ed9435" style="border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); margin-bottom: 30px;" />
 
+</div>
 
 ### 🔹 Dashboard Overview  
-<img width="554" height="836" alt="image" src="https://github.com/user-attachments/assets/a9e9dea4-3ef0-4160-89cb-c1d4301a109a" />
 
+<div align="center">
 
+<img width="500" height="550" alt="Dashboard Overview" src="https://github.com/user-attachments/assets/a9e9dea4-3ef0-4160-89cb-c1d4301a109a" style="border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); margin-bottom: 30px;" />
+
+</div>
 
 ### 🔹 Loan Entry & Management  
-<img width="1058" height="687" alt="image" src="https://github.com/user-attachments/assets/b71a357e-d08e-458b-8da6-f3d55fe7e430" />
 
+<div align="center">
 
+<img width="600" height="500" alt="Loan Entry & Management" src="https://github.com/user-attachments/assets/b71a357e-d08e-458b-8da6-f3d55fe7e430" style="border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); margin-bottom: 30px;" />
+
+</div>
 
 ### 🔹 Interest Calculation & Repayments  
-<img width="1338" height="533" alt="image" src="https://github.com/user-attachments/assets/c84b0a54-da60-4e67-b6a1-d9ba696fcd6a" />
 
+<div align="center">
 
+<img width="600" height="900" alt="Interest Calculation & Repayments" src="https://github.com/user-attachments/assets/c84b0a54-da60-4e67-b6a1-d9ba696fcd6a" style="border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); margin-bottom: 30px;" />
 
-
+</div>
 
 ### 🔹 WhatsApp Reminder Logs  
-<img width="713" height="166" alt="image (2)" src="https://github.com/user-attachments/assets/773f9c32-8fb7-4ee5-a40e-410c83cf90d0" />
 
+<div align="center">
 
-</div>  
+<img width="500" height="180" alt="WhatsApp Reminder Logs" src="https://github.com/user-attachments/assets/773f9c32-8fb7-4ee5-a40e-410c83cf90d0" style="border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);" />
+
+</div>
+
 
 ---
 
@@ -56,4 +67,3 @@ This platform helps moneylenders efficiently manage loans secured by gold and si
 - **Frontend:** HTML, JavaScript  
 
 ---
-
