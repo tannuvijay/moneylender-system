@@ -12,6 +12,7 @@ This platform helps moneylenders efficiently manage loans secured by gold and si
 - 🔔 **WhatsApp Reminders** – Sends payment reminders automatically via WhatsApp.  
 - 👥 **Multi-Owner Support** – Separate MongoDB databases for each owner with secure login.  
 - 📊 **Repayment Monitoring** – Track and update repayment status easily.
+- 📈 **Pdf and Excel Extraction** – Extract logs and transtion data through pdf.
 
 ---
 
@@ -47,6 +48,14 @@ This platform helps moneylenders efficiently manage loans secured by gold and si
 <div align="center">
 
 <img width="600" height="900" alt="Interest Calculation & Repayments" src="https://github.com/user-attachments/assets/c84b0a54-da60-4e67-b6a1-d9ba696fcd6a" style="border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); margin-bottom: 30px;" />
+
+</div>
+
+### 🔹 All logs data with option of Pdf and Excel extraction
+
+<div align="center">
+
+<img width="750" height="600" alt="image" src="https://github.com/user-attachments/assets/9582d98c-cab9-48f6-b3f7-dff726580ffb" />
 
 </div>
 
