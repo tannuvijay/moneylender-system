@@ -20,20 +20,24 @@ This platform helps moneylenders efficiently manage loans secured by gold and si
 <div align="center">
 
 ### 🔹 Login & Owner Selection  
-<img width="956" height="617" alt="image" src="https://github.com/user-attachments/assets/c1347c79-58c6-4d6e-9b1e-d122da619d76" />
+<img width="756" height="600" alt="image" src="https://github.com/user-attachments/assets/a23632d0-d04f-4337-9c1f-00d737ed9435" />
+
 
 
 
 ### 🔹 Dashboard Overview  
-<img width="1060" height="826" alt="image" src="https://github.com/user-attachments/assets/a1c900b4-f9bb-4b38-a841-040e6df92be5" />
+<img width="554" height="836" alt="image" src="https://github.com/user-attachments/assets/a9e9dea4-3ef0-4160-89cb-c1d4301a109a" />
+
 
 
 ### 🔹 Loan Entry & Management  
-<img width="1180" height="747" alt="image" src="https://github.com/user-attachments/assets/c5235bcd-f898-4362-a580-62d1eac63c7c" />
+<img width="1058" height="687" alt="image" src="https://github.com/user-attachments/assets/b71a357e-d08e-458b-8da6-f3d55fe7e430" />
+
 
 
 ### 🔹 Interest Calculation & Repayments  
-<img width="1457" height="657" alt="image" src="https://github.com/user-attachments/assets/22578592-9fd2-47b4-a1a8-a1d67fede338" />
+<img width="1338" height="533" alt="image" src="https://github.com/user-attachments/assets/c84b0a54-da60-4e67-b6a1-d9ba696fcd6a" />
+
 
 
 
