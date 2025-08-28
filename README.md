@@ -50,11 +50,21 @@ This platform helps moneylenders efficiently manage loans secured by gold and si
 
 </div>
 
-### 🔹 WhatsApp Reminder Logs  
+
+### 🔹 WhatsApp Reminder Logs Portal
 
 <div align="center">
 
-<img width="500" height="180" alt="WhatsApp Reminder Logs" src="https://github.com/user-attachments/assets/773f9c32-8fb7-4ee5-a40e-410c83cf90d0" style="border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);" />
+<img width="650" height="500" alt="image" src="https://github.com/user-attachments/assets/4ab95778-570e-435e-9830-a4a87ff925d8" />
+
+</div>
+
+### 🔹 WhatsApp Reminder Logs Message
+
+<div align="center">
+
+<img width="600" height="155" alt="image" src="https://github.com/user-attachments/assets/1be175cb-efbc-4eb9-b01a-ca0863e90319" />
+
 
 </div>
 
@@ -67,3 +77,4 @@ This platform helps moneylenders efficiently manage loans secured by gold and si
 - **Frontend:** HTML, JavaScript  
 
 ---
+
